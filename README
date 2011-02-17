@@ -1,0 +1,5 @@
+Automate _everything_ with one hotkey-combination: Ctrl-Space
+Define commands for every window individually in the configuration file "space.control".
+ControlSpace will display buttons for each command.
+
+Additional description (german): http://scratchbook.ch/2007/10/25/control-space/
