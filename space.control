@@ -1,0 +1,91 @@
+; Welcome to ControlSpace - control your entire workspace with one hotkey!
+; It's easy: As you push Ctrl-Space, predefined actions will run.
+
+; This is the configuration file. You can instantly edit it by pressing Ctrl-Alt-Space.
+; As you close the editor window, the new configuration is active.
+
+
+
+; Define actions for each window:
+
+Window
+	Button
+		Action1
+		Action2
+	Button2
+		Action1
+		Action2
+
+
+
+; Examples
+
+Firefox
+	Google
+		send	^t
+		sleep	200
+		send	{TAB}
+	Wikipedia
+		send	^t
+		sleep	200
+		send	http://de.wikipedia.org/wiki/
+	Leo
+		send	^t
+		sleep	200
+		send	http://pda.leo.org/?search=
+
+Notepad
+	Replace in selection: e -> o
+		send	^c
+		rxr	e	o
+		send	^v
+	Make window 80% visible
+		trans	80
+
+Editor
+	Replace in selection: e -> o
+		send	^c
+		rxr	e	o
+		send	^v
+	Make window 80% visible
+		trans	80
+
+
+
+
+
+
+
+
+
+
+; The "_All" is a special "window". Commands defined here will appear in every window.
+
+_All
+	Open Notepad
+		run	NOTEPAD.EXE
+		wwa	
+		sleep	100
+		send	Press Ctrl-Alt-Space to edit the configuration file{!}
+
+
+
+
+
+
+
+
+
+
+; Actions
+send	keys (AutoIt SendKey format)
+sleep	[duration in miliseconds]	wait
+wwa	[windowtitle]	[timeout (optional)]	win wait active, wait until matching window title becomes active, wait max [timeout] seconds
+wa	[windowtitle]	win activate, activates a window matching title
+rxr	[search]	[replace]	regular expression replace, replaces text in the clipboard
+run	[prog.exe]	run a program
+trans	80	change transparency of current window in %: 100 = visible, 0 = invisible
+ontop	set current window always on top
+notop	unset always on top for current window
+
+
